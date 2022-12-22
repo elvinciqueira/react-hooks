@@ -50,7 +50,7 @@ function ErrorFallback({error, resetErrorBoundary}) {
 }
 
 function PokemonInfo({pokemonName}) {
-  const {error, status, data: pokemon} = useFetchPokemon(pokemonName)
+  const {error, status, data: pokemon} = usePokemon(pokemonName)
 
   switch (status) {
     case 'idle':
@@ -66,7 +66,7 @@ function PokemonInfo({pokemonName}) {
   }
 }
 
-function useFetchPokemon(pokemonName) {
+function usePokemon(pokemonName) {
   const [state, setState] = React.useState({
     status: 'idle',
     error: null,
